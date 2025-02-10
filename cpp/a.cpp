@@ -16,3 +16,20 @@ int main() {
 
 
 }
+
+
+void kmpNext(int kmpNext[], string &s) {
+    int i = 0;
+    int j = kmpNext[0] = -1;
+    while (i < s.size()) {
+        while (j > -1 && s[i] != s[j]) {
+            j = kmpNext[j];
+        }
+    }
+    i++, j++;
+    if (s[i] == s[j]) {
+        kmpNext[i] = kmpNext[j];
+    } else {
+        kmpNext[i] = j;
+    }
+}

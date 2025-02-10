@@ -37,7 +37,7 @@ impl RollingHash {
     const BASE: i64 = 31;
 
     fn new(s: &String) -> Self {
-        let s = s.chars().collect_vec();
+        let s = s.chars().collect::<Vec<char>>();
         let n = s.len();
         let mut hash = vec![RHash(Mint1::from(0), Mint2::from(0)); n + 1];
         let mut power = vec![RHash(Mint1::from(1), Mint2::from(1)); n + 1];

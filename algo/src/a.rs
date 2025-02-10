@@ -13,5 +13,8 @@ use ac_library::*;
 
 fn main() {
     input! {
+        a: usize,
     }
+
+    let b = 100;
 }
